@@ -1,0 +1,69 @@
+Test nginx
+
+ssh ec2-user@13.234.34.114 -i ~/Downloads/yuv-key-pair.pem
+
+amazon-linux-extras install epel
+ls -l /etc/nginx/
+ps aux | grep nginx
+service nginx start
+
+yum check-update
+
+
+wget https://nginx.org/download/nginx-1.21.0.tar.gz
+
+tar -zxvf n<tab>
+
+yum groupinstall "Development Tools”
+
+./configure
+
+yum install pcre pcre-devel zlib zlib-devel openssl openssl-devel
+
+./configure --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error/log --http-log-path=/var/log/nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid —-with-http_ssl_module —-with-http_image_filter_module=dynamic —modules-path=/etc/nginx/modules
+
+make
+
+make install
+
+apt-get install libgd-dev
+
+make install
+
+
+https://www.nginx.com/nginx-wiki/build/dirhtml/start/topics/examples/systemd/
+
+
+
+systemctl reload nginx
+nginx -t
+
+
+LOGGING & ERROR
+
+cd /var/log/nginx
+echo ‘’ > access.log
+echo ‘’ > error.log
+
+cat access.log
+cat error.log
+
+
+
+
+systemctl list-units | grep php
+systemctl status nginx
+
+
+
+find / -name *fpm.sock
+tail -n 1 /var/log/nginx/error.log
+
+
+
+
+nproc
+lscpu
+ulimit -n  
+
+
